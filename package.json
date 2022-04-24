@@ -1,0 +1,23 @@
+{
+  "name": "coin-list",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "npm run background:build && npm run main:build && npm run copy-files",
+    "background:build": "esbuild src/background.ts --bundle --outfile=dist/background.js",
+    "main:build": "esbuild src/main.ts --bundle --outfile=dist/main.js",
+    "copy-files": "cp -r src/manifest.json src/popup.html src/main.css src/images dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "@g1llz",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.38",
+    "typescript": "^4.6.3"
+  }
+}
